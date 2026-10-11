@@ -18,12 +18,10 @@
 - Half Adder
 - Full Adder
 
-### Assignment 5 — 1-bit ALU
+### Assignment 5 — 6t SRAM 
 
-### Assignment 6 — 4-bit ALU
+### Assignment 6 — Layout, DRC & LVS
 
-### Assignment 7 — Layout, DRC & LVS
+### Assignment 7 — PEX & Post-Layout SPICE
 
-### Assignment 8 — PEX & Post-Layout SPICE
-
-### Assignment 9 — GDSII
+### Assignment 8 — GDSII
