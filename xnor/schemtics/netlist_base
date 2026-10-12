@@ -1,0 +1,114 @@
+* sch_path: sheet_6
+* Design: xnor  Tech: SKY130  Version: v1.0  Corner: tt  Analysis: AC,DC
+*.subckt xnor
+
+* ── Cell: INVERTER  (SKY130 CMOS, PMOS W/L=1/0.15, NMOS W/L=1/0.15) ──
+.subckt INVERTER A Y VDD GND
+*.ipin A
+*.opin Y
+*.iopin VDD
+*.iopin GND
+XMP Y A VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 mult=1
++ ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W'
++ nrs='0.29 / W'
++ sa=0 sb=0 sd=0
+XMN Y A GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 mult=1
++ ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W'
++ nrs='0.29 / W'
++ sa=0 sb=0 sd=0
+.ends INVERTER
+
+* NMOS | D=output_0 G=input_0 S=wire_14 B=GND | L=0.15 W=1 nf=1 mult=1
+XM4 output_0 input_0 wire_14 GND sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 mult=1
++ ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W'
++ nrs='0.29 / W'
++ sa=0 sb=0 sd=0
+
+* NMOS | D=wire_14 G=wire_9 S=GND B=GND | L=0.15 W=1 nf=1 mult=1
+XM5 wire_14 wire_9 GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 mult=1
++ ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W'
++ nrs='0.29 / W'
++ sa=0 sb=0 sd=0
+
+* NMOS | D=wire_13 G=wire_10 S=output_0 B=GND | L=0.15 W=1 nf=1 mult=1
+XM6 wire_13 wire_10 output_0 GND sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 mult=1
++ ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W'
++ nrs='0.29 / W'
++ sa=0 sb=0 sd=0
+
+* NMOS | D=GND G=input_1 S=wire_13 B=GND | L=0.15 W=1 nf=1 mult=1
+XM7 GND input_1 wire_13 GND sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 mult=1
++ ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W'
++ nrs='0.29 / W'
++ sa=0 sb=0 sd=0
+
+* PMOS | D=output_0 G=input_1 S=wire_6 B=VDD | L=0.15 W=1 nf=1 mult=1
+XM0 output_0 input_1 wire_6 VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 mult=1
++ ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W'
++ nrs='0.29 / W'
++ sa=0 sb=0 sd=0
+
+* PMOS | D=wire_6 G=input_0 S=VDD B=VDD | L=0.15 W=1 nf=1 mult=1
+XM1 wire_6 input_0 VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 mult=1
++ ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W'
++ nrs='0.29 / W'
++ sa=0 sb=0 sd=0
+
+* PMOS | D=VDD G=wire_11 S=wire_8 B=VDD | L=0.15 W=1 nf=1 mult=1
+XM2 VDD wire_11 wire_8 VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 mult=1
++ ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W'
++ nrs='0.29 / W'
++ sa=0 sb=0 sd=0
+
+* PMOS | D=wire_8 G=wire_12 S=output_0 B=VDD | L=0.15 W=1 nf=1 mult=1
+XM3 wire_8 wire_12 output_0 VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 mult=1
++ ad='int((nf+1)/2) * W/nf * 0.29'
++ as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)'
++ nrd='0.29 / W'
++ nrs='0.29 / W'
++ sa=0 sb=0 sd=0
+
+Xinverter_0 input_1 wire_9 VDD GND INVERTER
+Xinverter_1 input_0 wire_10 VDD GND INVERTER
+Xinverter_2 input_0 wire_11 VDD GND INVERTER
+Xinverter_3 input_1 wire_12 VDD GND INVERTER
+.end
+
