@@ -1,0 +1,51 @@
+#TRANSIENT ANALYSIS
+* xnor_tb
+.include xnor.spice
+
+Vvoltage_source_0 input_0 GND 1
+Vvoltage_source_1 input_1 GND 1
+Vvoltage_source_2 VDD GND 1
+
+.lib "/edacloud/libraries/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice" tt
+
+.tran 0.01n 40n
+.save v(input_0) v(input_1) v(output_0)
+.control
+run
+
+* v(input_0) v(input_1) v(output_0)
+plot v(input_0) v(input_1)+2 v(output_0)+4
+.endc
+
+.GLOBAL VDD
+.GLOBAL GND
+
+.end
+
+#AC , DC analsysis
+* xnor_tb
+.include xnor.spice
+
+Vvoltage_source_0 input_0 GND 1
+Vvoltage_source_1 input_1 GND 1
+Vvoltage_source_2 VDD GND 1
+
+.lib "/edacloud/libraries/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice" tt
+
+.dc Vvoltage_source_0 0 1.8 0.01
+.ac dec 100 1 10G
+.save v(input_0) v(input_1) v(output_0)
+.control
+run
+
+* v(input_0) v(input_1) v(output_0)
+plot v(input_0) v(input_1) v(output_0)
+
+* Gain: vdb(output_0)
+plot vdb(output_0)
+.endc
+
+.GLOBAL VDD
+.GLOBAL GND
+
+.end
